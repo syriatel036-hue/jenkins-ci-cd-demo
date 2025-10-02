@@ -21,10 +21,10 @@ pipeline {
                 sh 'docker build -t myapp .'
             }
         }
-    }
-    post {
-        always {
-            sh 'docker image prune -f'
+        stage('Cleanup') {
+            steps {
+                sh 'docker image prune -f'
+            }
         }
     }
 }
