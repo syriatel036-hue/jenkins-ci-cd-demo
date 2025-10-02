@@ -1,6 +1,7 @@
 pipeline {
     agent {
         docker {
+            registryUrl 'https://index.docker.io/v1/' 
             image 'node:18'
             args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
